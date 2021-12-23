@@ -1,0 +1,17 @@
+<f:layout name="Neos.Form:Field" />
+<f:section name="field">
+    <f:form.select
+        property="{element.identifier}"
+        id="{element.uniqueIdentifier}"
+        class="{element.properties.elementClassAttribute}"
+        disabled="{element.properties.disabled}"
+        options="{element.properties.options}"
+        optionLabelField="{element.properties.optionLabelField}"
+        optionValueField="{element.properties.optionValueField}"
+        prependOptionLabel="{element.properties.prependOptionLabel}"
+        prependOptionValue="{element.properties.prependOptionValue}"
+        errorClass="{element.properties.elementErrorClassAttribute}"
+        additionalAttributes="{element.properties.additionalAttributes}"
+        translate="{by: 'id', prefix: 'forms.element.{element.identifier}.options.', source: element.rootForm.renderingOptions.translationSource, package: element.rootForm.renderingOptions.translationPackage, arguments: element.properties.translationVariables}"
+    />
+</f:section>

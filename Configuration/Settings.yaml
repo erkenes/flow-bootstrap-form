@@ -1,0 +1,133 @@
+Erk:
+  Flow:
+    BootstrapForm:
+      yamlPersistenceManager:
+        savePaths:
+          'resource://Erk.Flow.BootstrapForm/Private/Form/': true
+        disabledForms: []
+
+Neos:
+  Form:
+    yamlPersistenceManager:
+      savePath: 'resource://Erk.Flow.BootstrapForm/Private/Form/'
+    presets:
+      'erk-bootstrap5':
+        parentPreset: 'default'
+        title: 'Bootstrap 5'
+        formElementTypes:
+          # Base definitions
+          'Neos.Form:Base':
+            renderingOptions:
+              partialPathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/Partials/{@type}.html'
+              layoutPathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/Layouts/{@type}.html'
+              translationPackage: 'Erk.Flow.BootstrapForm'
+              translationSource: 'Main'
+              validationErrorTranslationPackage: 'Erk.Flow.BootstrapForm'
+              validationErrorTranslationSource: 'ValidationErrors'
+
+          # Layout
+          'Neos.Form:Form':
+            renderingOptions:
+              templatePathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/Form.html'
+              submitButtonLabel: 'Submit'
+              nextPageLabel: 'Next page'
+              previousPageLabel: 'Previous page'
+          # Text inputs
+          'Neos.Form:TextMixin':
+            properties:
+              placeholder: ''
+          'Neos.Form:SingleLineText':
+            renderingOptions:
+              templatePathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/SingleLineText.html'
+              skipLabel: true
+            properties:
+              containerClassAttribute: 'form-floating'
+              elementClassAttribute: 'form-control'
+              elementErrorClassAttribute: 'form-control-danger'
+              placeholder: null
+              label: null
+              disabled: false
+              #maxlength: 250
+              additionalAttributes: [ ]
+              translationVariables: [ ]
+          'Neos.Form:MultiLineText':
+            renderingOptions:
+              templatePathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/MultiLineText.html'
+              skipLabel: true
+            properties:
+              containerClassAttribute: 'form-floating'
+              elementClassAttribute: 'form-control'
+              elementErrorClassAttribute: 'form-control-danger'
+              placeholder: null
+              label: null
+              rows: null
+              cols: null
+              disabled: false
+              #maxlength: 250
+              additionalAttributes: [ ]
+              translationVariables: [ ]
+          'Neos.Form:Password':
+            renderingOptions:
+              templatePathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/Password.html'
+              skipLabel: true
+            properties:
+              containerClassAttribute: 'form-floating'
+              elementClassAttribute: 'form-control'
+              elementErrorClassAttribute: 'form-control-danger'
+              placeholder: null
+              label: null
+              disabled: false
+              additionalAttributes: []
+              translationVariables: []
+
+          # Selection inputs
+          'Neos.Form:Checkbox':
+            renderingOptions:
+              templatePathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/Checkbox.html'
+              skipLabel: true
+            properties:
+              value: '1'
+              containerClassAttribute: 'form-check'
+              elementClassAttribute: 'form-check-input'
+              elementErrorClassAttribute: ''
+              disabled: false
+              additionalAttributes: [ ]
+              translationVariables: [ ]
+
+          'Neos.Form:SingleSelectRadiobuttons':
+            renderingOptions:
+              templatePathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/SingleSelectRadiobuttons.html'
+              skipLabel: true
+            properties:
+              options: [ ]
+              containerClassAttribute: ''
+              elementClassAttribute: 'form-check-input'
+              elementErrorClassAttribute: 'form-control-danger'
+              disabled: false
+              additionalAttributes: [ ]
+              translationVariables: [ ]
+          'Neos.Form:SingleSelectDropdown':
+            renderingOptions:
+              templatePathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/SingleSelectDropdown.html'
+              skipLabel: true
+            properties:
+              options: [ ]
+              containerClassAttribute: ''
+              elementClassAttribute: 'form-select'
+              elementErrorClassAttribute: 'form-control-danger'
+              disabled: false
+              additionalAttributes:
+                aria-label: 'Default select example'
+              translationVariables: [ ]
+          'Neos.Form:MultipleSelectDropdown':
+            renderingOptions:
+              templatePathPattern: 'resource://Erk.Flow.BootstrapForm/Private/Templates/Form/erk-bootstrap5/MultipleSelectDropdown.html'
+            properties:
+              options: [ ]
+              containerClassAttribute: ''
+              elementClassAttribute: 'form-select'
+              elementErrorClassAttribute: 'form-control-danger'
+              disabled: false
+              additionalAttributes:
+                aria-label: 'Default select example'
+              translationVariables: [ ]

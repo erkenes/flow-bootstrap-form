@@ -1,0 +1,24 @@
+<f:layout name="Neos.Form:Field" />
+<f:section name="field">
+    <f:for each="{element.properties.options}" as="label" key="value">
+        <div class="form-check">
+            <f:form.radio
+                property="{element.identifier}"
+                id="{element.identifier}-{value}"
+                class="{element.properties.elementClassAttribute}"
+                value="{value}"
+                errorClass="{element.properties.elementErrorClassAttribute}"
+                disabled="{element.properties.disabled}"
+            />
+            <label class="form-check-label" for="{element.identifier}-{value}">
+                <f:translate
+                    id="forms.element.{element.identifier}.options.{value}"
+                    source="{element.rootForm.renderingOptions.translationSource}"
+                    package="{element.rootForm.renderingOptions.translationPackage}"
+                    arguments="{element.properties.translationVariables}"
+                    value="{label}"
+                />
+            </label>
+        </div>
+    </f:for>
+</f:section>

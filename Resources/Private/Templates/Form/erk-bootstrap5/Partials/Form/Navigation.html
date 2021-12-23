@@ -1,0 +1,24 @@
+<div class="clearfix">
+    <f:if condition="{form.renderingOptions.__hideDefaultNavigation}">
+        <f:then></f:then>
+        <f:else>
+            <f:if condition="{form.nextPage}">
+                <f:then>
+                    <f:form.button name="__currentPage" value="{form.nextPage.index}" class="btn btn-primary float-xs-right">
+                        {f:translate(id: 'forms.navigation.nextPage', source: form.renderingOptions.translationSource, package: form.renderingOptions.translationPackage, value: form.renderingOptions.nextPageLabel)}
+                    </f:form.button>
+                </f:then>
+                <f:else>
+                    <f:form.button name="__currentPage" value="{form.pages -> f:count()}" class="btn btn-primary float-xs-right">
+                        {f:translate(id: 'forms.navigation.submit', source: form.renderingOptions.translationSource, package: form.renderingOptions.translationPackage, value: form.renderingOptions.submitButtonLabel)}
+                    </f:form.button>
+                </f:else>
+            </f:if>
+            <f:if condition="{form.previousPage}">
+                <f:form.button name="__currentPage" value="{form.previousPage.index}" formnovalidate="formnovalidate" class="btn btn-danger">
+                    {f:translate(id: 'forms.navigation.previousPage', source: form.renderingOptions.translationSource, package: form.renderingOptions.translationPackage, value: form.renderingOptions.previousPageLabel)}
+                </f:form.button>
+            </f:if>
+        </f:else>
+    </f:if>
+</div>

@@ -1,0 +1,35 @@
+{
+    "name": "eneserk/flow-bootstrap-form",
+    "description": "Flow package for that overwrite the form templates to match the bootstrap 5 templates",
+    "type": "neos-package",
+    "keywords": ["bootstrap", "bootstrap 5", "fluid", "form", "Flow", "Neos-Flow"],
+    "homepage": "https://github.com/erkenes/flow-bootstrap-form",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Enes Erk",
+            "homepage": "https://github.com/erkenes",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/erkenes/flow-bootstrap-form/issues",
+        "source": "https://github.com/erkenes/flow-bootstrap-form"
+    },
+    "require": {
+        "php": ">=7.4",
+        "neos/flow": "*",
+        "neos/fluid-adaptor": "*",
+        "neos/form": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Erk\\Flow\\BootstrapForm\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Erk.Flow.BootstrapForm"
+        }
+    }
+}

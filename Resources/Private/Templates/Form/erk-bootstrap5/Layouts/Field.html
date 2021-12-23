@@ -1,0 +1,26 @@
+{namespace form=Neos\Form\ViewHelpers}
+
+<f:comment>
+    @ToDo: Anpassen
+</f:comment>
+<f:validation.results for="{element.identifier}">
+	<div class="{element.properties.containerClassAttribute}{f:if(condition: validationResults.flattenedErrors, then: ' {element.properties.containerErrorClassAttribute}')}"<f:if condition="{element.rootForm.renderingOptions.previewMode}"> data-element="{form:form.formElementRootlinePath(renderable:element)}"</f:if>>
+		<f:if condition="{element.renderingOptions.skipLabel}">
+			<f:else>
+				<label class="form-control-label" for="{element.uniqueIdentifier}">
+					{f:translate(id: 'forms.element.{element.identifier}.label', source: element.rootForm.renderingOptions.translationSource, package: element.rootForm.renderingOptions.translationPackage, value: element.label) -> f:format.nl2br()}
+					<f:if condition="{element.required}"><f:render partial="Neos.Form:Field/Required" /></f:if>
+				</label>
+			</f:else>
+		</f:if>
+		<f:render section="field" />
+		<f:if condition="{validationResults.flattenedErrors}">
+			<span class="form-control-feedback">
+				<f:for each="{validationResults.errors}" as="error">
+					{f:translate(id: error.code, arguments: error.arguments, package: element.rootForm.renderingOptions.validationErrorTranslationPackage, source: element.rootForm.renderingOptions.validationErrorTranslationSource, value: error) -> f:format.nl2br()}
+					<br />
+				</f:for>
+			</span>
+		</f:if>
+	</div>
+</f:validation.results>
